@@ -1,0 +1,16 @@
+{#{% extends "FOSUserBundle::layout.html.twig" %}#}
+<p align=left class="container"><a href="{{ path('_homepage') }}" class="" align="left">Dashboard </a><i class="icon-chevron-right"></i> <a href="{{ path('fos_user_profile_show') }}" class=""> Mon profil</a>
+</p>
+{% block fos_user_content %}
+<p>
+<div class="container">
+<div class="well">
+<div class="fos_user_user_show">
+    <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+</div>
+</div>
+</div>
+</p>
+<a  href="{{ path('fos_user_change_password') }}" class="btn">Changer mon mot de passe</a>
+{% endblock fos_user_content %}
