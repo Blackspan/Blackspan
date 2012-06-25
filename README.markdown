@@ -1,7 +1,7 @@
 Blackspan
 =============
 
-The Blackspan is
+The Blackspan is a application that generates files ".htaccess" to protect the folder on your servers.
 
 -
 -
