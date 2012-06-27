@@ -19,7 +19,7 @@ It requires a complete setup to work properly.
 Documentation
 -------------
 
-The bulk of the documentation is stored in the `Resources/doc/index.md`
+The bulk of the documentation is stored in the `src/Webapp/BlackspanBundle/Resources/doc/index.md`
 file in this bundle:
 
 [Read the Documentation]()
