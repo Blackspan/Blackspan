@@ -1,0 +1,7 @@
+parameters:
+#    webapp_blackspan.example.class: Webapp\BlackspanBundle\Example
+
+services:
+#    webapp_blackspan.example:
+#        class: %webapp_blackspan.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
