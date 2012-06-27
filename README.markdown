@@ -14,9 +14,6 @@ The main function is that you can set the dates of beginning and end of each aut
 
 **Note:**
 
-> For users of Symfony2.0, you must use the 1.x branch. Master is no longer
-> compatible with Symfony2.0.
-
 
 Documentation
 -------------
