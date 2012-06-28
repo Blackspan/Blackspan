@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" href="{{ asset('js/prettify.js') }}"></script>   
+<script type="text/javascript" href="{{ asset('js/kickstart.js') }}"></script>   
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/kickstart.css') }}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
+{% endblock %}
+    </head>
+    <body><a id="top-of-page"></a><div id="wrap" class="clearfix">
+    <ul class="menu">
+    <li><a href="{{ path('_homepage') }}">Tableau de bord</a></li>
+    <li><a href="{{ path('blackspan') }}">Liste</a></li>
+    <li><a href="{{ path('blackspan_new') }}">Ajouter</a></li>
+    <li><a href="{{ path('blackspan_maitenance') }}">Maintenance</a></li>
+    <li><a href="{{ path ('blackspan_help')}}">Aide</a></li>
+    <li><a href="{{ path ('blackspan_contact')}}">Contact</a></li>
+    <li><a href="{{ path ('fos_user_profile_show') }}">Mon profil</a></li>
+    <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+    </ul>
+        <div align=center>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+        {#        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> #}
+                 <h3>Connexion</h3>
+            {% endif %}
+        </div>
+        
+        {% for key, message in app.session.getFlashes() %}
+        <div class="{{ key }}" align=center>
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+        {% endfor %}
+       
+        <div align=center>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+             <br>
+             </br>
+        </div>
+    </body>
+</html>
