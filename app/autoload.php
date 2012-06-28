@@ -7,6 +7,7 @@ $loader = new UniversalClassLoader();
 $loader
 		->registerNamespaces(
 				array(
+						'FOS' => __DIR__.'/../vendor/bundles',
 						'Symfony' => array(__DIR__ . '/../vendor/symfony/src',
 								__DIR__ . '/../vendor/bundles'),
 						'Sensio' => __DIR__ . '/../vendor/bundles',

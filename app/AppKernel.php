@@ -14,7 +14,10 @@ class AppKernel extends Kernel {
 				new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 				new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 				new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-				new Webapp\BlackspanBundle\WebappBlackspanBundle(),);
+				new Webapp\BlackspanBundle\WebappBlackspanBundle(),
+				new FOS\UserBundle\FOSUserBundle(),
+				new Webapp\UserBundle\WebappUserBundle(),);
+				
 
 		if (in_array($this->getEnvironment(), array('dev', 'test'))) {
 			$bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();

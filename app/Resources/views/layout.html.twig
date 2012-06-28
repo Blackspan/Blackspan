@@ -20,8 +20,9 @@
 	<li><a href="{{ path('blackspan_maitenance') }}">Maintenance</a></li>
 	<li><a href="{{ path ('blackspan_help')}}">Aide</a></li>
 	<li><a href="{{ path ('blackspan_contact')}}">Contact</a></li>
-	<li><a href="#">Mon profil</a></li>
-	<li><a href="#">Deconnexion</a></li>
+	<li><a href="{{ path ('fos_user_profile_show') }}">Mon profil</a></li>
+	<li><a href="{{ path('fos_user_security_logout') }}" class="large red">Deconnexion</a></li>
+	<li><a> Logged in {{app.user.username}}</a></li>
 </ul>
 	 
 <div class="col_12">

@@ -58,6 +58,8 @@ class RequestController extends Controller
     public function newAction()
     {
         $entity = new Request();
+        $entity->setDatestart(new \Datetime());
+        $entity->setDateend(new \Datetime());
         $form   = $this->createForm(new RequestType(), $entity);
 
         return $this->render('WebappBlackspanBundle:Request:new.html.twig', array(

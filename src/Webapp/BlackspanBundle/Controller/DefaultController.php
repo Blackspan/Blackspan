@@ -65,7 +65,7 @@ class DefaultController extends Controller {
 
         foreach ($answers as $request) {
             fputcsv($handle,
-                    array($request->getDate()->format('d-m-Y'),
+                    array($request->getDatestart()->format('d-m-Y'),
                             $request->getDateend()->format('d-m-Y'),
                             $request->getFirstname(), 
                             $request->getLastname(),
