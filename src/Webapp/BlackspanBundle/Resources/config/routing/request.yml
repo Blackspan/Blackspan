@@ -1,0 +1,47 @@
+blackspan:
+    pattern:  /
+    defaults: { _controller: "WebappBlackspanBundle:Request:index" }
+
+blackspan_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "WebappBlackspanBundle:Request:show" }
+
+blackspan_new:
+    pattern:  /new
+    defaults: { _controller: "WebappBlackspanBundle:Request:new" }
+
+blackspan_create:
+    pattern:  /create
+    defaults: { _controller: "WebappBlackspanBundle:Request:create" }
+    requirements: { _method: post }
+
+blackspan_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "WebappBlackspanBundle:Request:edit" }
+
+blackspan_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "WebappBlackspanBundle:Request:update" }
+    requirements: { _method: post }
+
+blackspan_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "WebappBlackspanBundle:Request:delete" }
+    requirements: { _method: post }
+blackspan_maitenance:
+    pattern:  /maintenance
+    defaults: { _controller: "WebappBlackspanBundle:Default:maintenance" }
+blackspan_help:
+    pattern:  /help-me
+    defaults: { _controller: "WebappBlackspanBundle:Default:helpme" }
+blackspan_exportcur:
+    pattern:  /export-current
+    defaults: { _controller: "WebappBlackspanBundle:Default:exportcur" }
+blackspan_export:
+    pattern:  /export-all-databases
+    defaults: { _controller: "WebappBlackspanBundle:Default:export" }
+blackspan_contact:
+    pattern:  /contact
+    defaults: { _controller: "WebappBlackspanBundle:Contact:contact" }
+    requirements:
+        _method:  GET|POST

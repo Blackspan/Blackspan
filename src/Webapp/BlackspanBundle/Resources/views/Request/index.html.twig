@@ -1,0 +1,62 @@
+{% extends "WebappBlackspanBundle::layout.html.twig" %}
+{% block title %}
+Tableau de bord -{{ parent() }}
+{% endblock %}
+{% block webappblackspan_body %}
+<h3>Liste des accès</h3>
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Datestart</th>
+            <th>Dateend</th>
+            <th>Reference</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Mail</th>
+            <th>Partner</th>
+            <th>Partnerip</th>
+            <th>Sitedest</th>
+            <th>Siteversion</th>
+            <th>Webhosting</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('blackspan_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{% if entity.datestart %}{{ entity.datestart|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{% if entity.dateend %}{{ entity.dateend|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ entity.reference }}</td>
+            <td>{{ entity.firstname }}</td>
+            <td>{{ entity.lastname }}</td>
+            <td>{{ entity.mail }}</td>
+            <td>{{ entity.partner }}</td>
+            <td>{{ entity.partnerip }}</td>
+            <td>{{ entity.sitedest }}</td>
+            <td>{{ entity.siteversion }}</td>
+            <td>{{ entity.webhosting }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('blackspan_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('blackspan_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('blackspan_new') }}">
+            Création d'un nouveau accès
+        </a>
+    </li>
+</ul>
+{%endblock%}

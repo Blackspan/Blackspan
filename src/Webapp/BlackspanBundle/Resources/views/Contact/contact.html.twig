@@ -1,0 +1,15 @@
+{% extends "WebappBlackspanBundle::layout.html.twig" %}
+{% block title %}
+Contact-{{ parent() }}
+{% endblock %}
+{% block webappblackspan_body %}
+            <form action="{{ path('blackspan_contact') }}" method="post" {{ form_enctype(form) }} >
+                {{ form_errors(form) }}
+                {{ form_row(form.name) }}   
+                {{ form_row(form.email) }}
+                {{ form_row(form.subject) }}
+                {{ form_row(form.body) }}
+                {{ form_rest(form) }}             
+                <input type="submit" value="Envoyer" class="btn" />
+            </form>
+    {% endblock %}

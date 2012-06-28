@@ -1,0 +1,79 @@
+{% extends "WebappBlackspanBundle::layout.html.twig" %}
+{% block title %}
+Affichage de l'accès -{{ parent() }}
+{% endblock %}
+{% block webappblackspan_body %}
+<h3>Accès</h3>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Datestart</th>
+            <td>{{ entity.datestart|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Dateend</th>
+            <td>{{ entity.dateend|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Reference</th>
+            <td>{{ entity.reference }}</td>
+        </tr>
+        <tr>
+            <th>Firstname</th>
+            <td>{{ entity.firstname }}</td>
+        </tr>
+        <tr>
+            <th>Lastname</th>
+            <td>{{ entity.lastname }}</td>
+        </tr>
+        <tr>
+            <th>Mail</th>
+            <td>{{ entity.mail }}</td>
+        </tr>
+        <tr>
+            <th>Partner</th>
+            <td>{{ entity.partner }}</td>
+        </tr>
+        <tr>
+            <th>Partnerip</th>
+            <td>{{ entity.partnerip }}</td>
+        </tr>
+        <tr>
+            <th>Sitedest</th>
+            <td>{{ entity.sitedest }}</td>
+        </tr>
+        <tr>
+            <th>Siteversion</th>
+            <td>{{ entity.siteversion }}</td>
+        </tr>
+        <tr>
+            <th>Webhosting</th>
+            <td>{{ entity.webhosting }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('blackspan') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('blackspan_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('blackspan_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{%endblock%}

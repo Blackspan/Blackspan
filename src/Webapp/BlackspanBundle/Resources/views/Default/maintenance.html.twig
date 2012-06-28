@@ -1,0 +1,9 @@
+{% extends "WebappBlackspanBundle::layout.html.twig" %}
+{% block title %}
+Maintenance -{{ parent() }}
+{% endblock %}
+{% block webappblackspan_body %}
+<h3>Sauvegarde</h3>
+<a href="{{ path('blackspan_exportcur') }}" class="btn"><i class="icon-download-alt"></i> Les accès en cours</a>
+<a href="{{ path('blackspan_export') }}" class="btn"><i class="icon-download-alt"></i> Tous les accès</a>
+{%endblock%}

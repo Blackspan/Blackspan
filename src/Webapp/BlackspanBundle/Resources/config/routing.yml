@@ -1,0 +1,5 @@
+WebappBlackspanBundle_blackspan:
+    resource: "@WebappBlackspanBundle/Resources/config/routing/request.yml"
+    prefix:   /blackspan
+
+
