@@ -1,3 +1,0 @@
-WebappBlackspanBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: WebappBlackspanBundle:Default:index }
