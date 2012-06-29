@@ -1,8 +1,8 @@
 Blackspan
 =============
 
-The Blackspan is a application that generates files ".htaccess" to protect the folder on your servers.
-The application uses an ssh to manage access by editing or creating htaccess files in directories.
+The Blackspan is an application that generates files ".htaccess" to protect the folder on your servers.
+The application uses an ssh to manage access by editing or creating htaccess files in the root folder.
 The main function is that you can set the dates of beginning and end of each authorization created by the application
 
 - Symfony2
