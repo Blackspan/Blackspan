@@ -1,4 +1,4 @@
-Blackspan
+Blackspan (bèta version)
 =============
 
 The Blackspan is an application that generates files ".htaccess" to protect the folder on your servers.
