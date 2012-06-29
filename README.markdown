@@ -13,7 +13,7 @@ The main function is that you can set the dates of beginning and end of each aut
 
 
 **Note:**
-After configuration, the application will manage the automatiquely access to your servers. 
+After configuration, the application will manage the access to your servers. 
 It requires a complete setup to work properly.
 
 Documentation
