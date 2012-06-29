@@ -22,7 +22,7 @@ Documentation
 The bulk of the documentation is stored in the `src/Webapp/BlackspanBundle/Resources/doc/index.md`
 file in this bundle:
 
-[Read the Documentation](src/Webapp/BlackspanBundle/Resources/doc/index.rst)
+[Read the Documentation](https://github.com/Blackspan/Blackspan/blob/master/src/Webapp/BlackspanBundle/Resources/doc/index.rst)
 
 Installation
 ------------
