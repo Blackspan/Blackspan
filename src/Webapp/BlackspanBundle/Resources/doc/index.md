@@ -60,7 +60,7 @@ Create the user of databse blackspan
 If you create and configure the database, please update the file of configuration.
 
 Edit Blackspan/app/config/parameter.ini
-
+```php
 [parameters]
     database_driver="pdo_mysql"
     database_host="localhost"
@@ -74,7 +74,7 @@ Edit Blackspan/app/config/parameter.ini
     mailer_password="admin"
     locale="en"
     secret="a9e1fd44f44e33cc0afcd6c22a241f1010"
-
+````
 You are finish configure database for the web application.
 
 
