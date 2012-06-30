@@ -78,18 +78,22 @@ Edit Blackspan/app/config/parameter.ini
 You are finish configure database for the web application.
 
 
-####### Step 3: Create and configure the web werver apache
+### Step 3: Create and configure the web werver apache
 
 (If you don't install apache server, please install now)
 
 Install apache (for debian and ubuntu)
-
+```php
 apt-get install apache2
+```
 
 Create the virtualhost for the web app
 
+```php
 cp /etc/apache2/sites-avalaibles/default /etc/apache2/sites-avalaibles/blackspanvhost
 (The command create a copy file default in apache)
+```
+
 ```php
 <VirtualHost *:80>
         ServerAdmin blackspan@blackspan.fr
@@ -123,9 +127,9 @@ Activate the link
 a2enssite blackspanvhost
 ```
 and restart the web server
-
+```php
 /etc/init.d/apache2 restart|reload
-
+```
 
 **Warning:**
 You can test  the web app on the browser, you must see the homepage for authentication.
@@ -133,26 +137,23 @@ But we can't connect beacause we don't create the users. Just for a test begin t
 
 
 
-###### step 4 : Deploy the symlink and update the tables in database
+### step 4 : Deploy the symlink and update the tables in database
 
 Please launch th command of symfony2 for deploy the symlink
-
+```php
 php app/console assets:install web --symlink
-
-        And 
-
+```
+```php
 php app/console doctrine:schema:update --force
+```
 
 This command is used to update the database an create the tables for the storage of the
 informations in the web application.
 Symfony2 facilitate the different tasks with integrated controls in the framework.
 This is very good option.
-
 You can to verify in the databases, all the tables are create for make start the web application.
 
-
-
-####### Step 5 : Install and configure ssh
+### Step 5 : Install and configure ssh
 
 (If you don't install ssh server, please install because the web application
 start with the service. )
@@ -161,7 +162,7 @@ Install and generate the public key rsa
 
     apt-get install ssh
 
-    after the install launche this command
+after the install launche this command
 
     ssh-keygen -t rsa
 
@@ -169,39 +170,36 @@ The keys id_rsa.pub and id_rsa are store in /root/.ssh/
 
 Configure ssh
 
-    This step is very simple. Because the objective is to configure the automatical connection in the
-    remote server  than the web app must manages the authorization with the htaccess files.
-    For established the connection, you must send the id_rsa.pub in the remote server to authorize the connection
+This step is very simple. Because the objective is to configure the automatical connection in the
+remote server  than the web app must manages the authorization with the htaccess files
+For established the connection, you must send the id_rsa.pub in the remote server to authorize the connection
 
 Send the id_rsa.pub
     
-    scp id_rsa.pub user@remote_server:/user/.ssh        -------> Send the id_rsa.pub on folder /user/.ssh/ to remote server
+    scp id_rsa.pub user@remote_server:/user/.ssh   --> Send the id_rsa.pub on folder /user/.ssh/ to remote server
 
-    cat id_rsa.pub >> authorized_keys                   -------> Add to authorize the automatical connection.
+    cat id_rsa.pub >> authorized_keys              --> Add to authorize the automatical connection.
 
 Test the connection
 
-    You can test the connection to remote server
+You can test the connection to remote server
 
-    ssh user@remote_server                              --------> The connection must be established without ask the password
+    ssh user@remote_server 
 
-    If you don't configure the ssh, you are the link for help
-
+The connection must be established without ask the password.
+If you don't configure the ssh, you are the link for help
+--> This is a movie tutorial explain ssh 
 http://www.tutoriels-video.fr/connexion-ssh-sans-mot-passe-keygen/
-    --> This is a movie tutorial explain ssh 
-
 
  **Warning:**
  You must configure the remote server in /Blackspan/src/Webapp/BlackspanBundle/Script/Create_ssh.php and Delete_ssh.php
  Please also configure the database on the same file
 
-
-####### Step 6 :  Configure the crontab for launch the script
+### Step 6 :  Configure the crontab for launch the script
 
 **Note:**
 You must personalize the scripts in the web application
-
-Sample: Config my script Create_ssh.php
+Config my script Create_ssh.php
 
 ``` php
 <?php
@@ -240,7 +238,8 @@ $path = realpath('.htaccess');
 
 ```
 
-    Config my script Delete_ssh.php
+
+Config my script Delete_ssh.php
 
 ``` php
 
@@ -284,7 +283,7 @@ Launch this command
 
     crontab -e
 
-    Copy this request in crontab
+Copy this request in crontab
     /*
     * This command launch the request each day in 00:01
     */
@@ -296,14 +295,14 @@ Launch this command
     58 23 * * * php /sites/blackspan/src/Itandlabs/BlackspanBundle/Script/Delete_ssh.php
 
 
-######## Step 7. Personalize the script of verification
+### Step 7: Personalize the script of verification
 
 **Note:** **Warning:**
 The objective in script is to personalize the root folder. For the moment the web app is the beta test.
 Please contact me if you are the problems
 
 
-####### Step 8. Create Users for the web app
+### Step 8: Create Users for the web app
 
 I uses the FOSUserBundle for the part authentication.
 For create an user launch the command
