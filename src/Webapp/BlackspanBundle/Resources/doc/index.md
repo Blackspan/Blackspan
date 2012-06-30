@@ -90,7 +90,7 @@ Create the virtualhost for the web app
 
 cp /etc/apache2/sites-avalaibles/default /etc/apache2/sites-avalaibles/blackspanvhost
 (The command create a copy file default in apache)
-
+```php
 <VirtualHost *:80>
         ServerAdmin blackspan@blackspan.fr
         DocumentRoot /sites/Blackspan/
@@ -117,11 +117,11 @@ cp /etc/apache2/sites-avalaibles/default /etc/apache2/sites-avalaibles/blackspan
         CustomLog ${APACHE_LOG_DIR}/access_blackspan.log combined
         ServerSignature Off
 </VirtualHost>
-
+```
 Activate the link
-
+```bash
 a2enssite blackspanvhost
-
+```
 and restart the web server
 
 /etc/init.d/apache2 restart|reload
