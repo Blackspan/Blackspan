@@ -7,9 +7,22 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller {
 
 	public function indexAction() {
-		return $this
-				->render('WebappBlackspanBundle:Default:index.html.twig',
-						array());
+	 $currentdate = new \DateTime('now');
+                $em = $this->container->get('doctrine')->getEntityManager();
+                $qb = $em->createQueryBuilder();
+                $qb->select('entities')
+                                ->from('WebappBlackspanBundle:Request', 'entities')
+                                ->where('(entities.dateend) >= :dateend')
+                                ->orderBy('entities.dateend', 'ASC')
+                                ->setParameter('dateend', $currentdate->format('Y-m-d'));
+                $query = $qb->getQuery();
+                $entities = $query->getResult();
+
+
+                                return $this
+                                ->render('WebappBlackspanBundle:Default:index.html.twig',
+                                                array('entities' => $entities));
+
 	}
 	public function maintenanceAction() {
         return $this
