@@ -288,13 +288,13 @@ Copy this request in crontab
     /*
     * This command launch the request each day in 00:01
     */
-    1 0 * * * php /sites/blackspan/src/Itandlabs/BlackspanBundle/Script/Create_ssh.php
+    1 0 * * * php /sites/demo_blackspan/src/Webapp/BlackspanBundle/Script/Create_ssh.php
 ```
 ```php
     /*
     * This command launch the request each day in 23:58
     */
-    58 23 * * * php /sites/blackspan/src/Itandlabs/BlackspanBundle/Script/Delete_ssh.php
+    58 23 * * * php /sites/demo_blackspan/src/Webapp/BlackspanBundle/Script/Delete_ssh.php
 ```
 
 ### Step 7: Personalize the script of verification
