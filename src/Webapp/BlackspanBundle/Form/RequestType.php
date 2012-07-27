@@ -16,7 +16,7 @@ class RequestType extends AbstractType
             ->add('firstname', 'text', array('label' => 'Prénom'))
             ->add('lastname', 'text', array('label' => 'Nom'))
             ->add('mail')
-            ->add('partner')
+            ->add('partner', 'text', array('label' => 'Nom Partenaire'))
             ->add('partnerip')
             ->add('sitedest')
             ->add('siteversion')
