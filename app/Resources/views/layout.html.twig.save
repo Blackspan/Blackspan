@@ -12,6 +12,6 @@
 <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" />
 {% endblock %}
 </head><body><a id="top-of-page"></a><div id="wrap" class="clearfix">
-<!-- ===================================== END HEADER ===================================== -->
+<!-- ===================================== END HEADER ==========================-=========== -->
 {% block webappblackspan_body %}
 {% endbloc
