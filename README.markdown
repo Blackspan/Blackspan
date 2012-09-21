@@ -32,6 +32,6 @@ All the installation instructions are located in [documentation](https://github.
 License
 -------
 
-This bundle is under the MIT license. See the complete license in the bundle:
+This application is under the license GPL. See the complete license in the application:
 
     src/Webapp/BlackspanBundle/Resources/meta/LICENSE
